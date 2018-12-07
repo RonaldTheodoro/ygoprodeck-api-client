@@ -26,3 +26,8 @@ def test_validate_level_rank_out_of_range(client):
 def test_validate_attribute(client):
     with pytest.raises(ygoprodeck.exceptions.AttributeInvalid):
         client.get_cards(attribute='Not a valid attribute')
+
+
+def test_change_defense_param_key(client):
+    params = client.change_defense_param_key({'def_': 2500})
+    assert params == {'def': 2500}
