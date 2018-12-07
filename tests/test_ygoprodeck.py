@@ -21,3 +21,8 @@ def test_validate_level_rank_invalid_value(client):
 def test_validate_level_rank_out_of_range(client):
     with pytest.raises(ygoprodeck.exceptions.LevelOrRankInvalid):
         client.get_cards(level=15)
+
+
+def test_validate_attribute(client):
+    with pytest.raises(ygoprodeck.exceptions.AttributeInvalid):
+        client.get_cards(attribute='Not a valid attribute')
