@@ -66,6 +66,7 @@ class YGOProDeck:
 
         self.validate_type(params)
         self.validate_level_rank(params)
+        self.validate_attribute(params)
 
     @staticmethod
     def change_defense_param_key(params):
@@ -113,3 +114,11 @@ class YGOProDeck:
         if race is not None:
             if race not in constants.RACE:
                 raise exceptions.RaceInvalid()
+
+    @staticmethod
+    def validate_attribute(params):
+        attribute = params.get('attribute')
+
+        if attribute is not None:
+            if attribute not in constants.ATTRIBUTES:
+                raise exceptions.AttributeInvalid()
