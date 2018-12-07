@@ -97,7 +97,7 @@ class YGOProDeck:
     def validate_level_rank(params):
         level = params.get('type')
 
-        if level is None:
+        if level is not None:
             try:
                 level = int(level)
             except ValueError:
