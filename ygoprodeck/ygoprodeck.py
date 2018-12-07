@@ -93,7 +93,7 @@ class YGOProDeck:
         card_type = params.get('type')
 
         if card_type is not None:
-            if card_type not in constants.TYPES:
+            if card_type.lower() not in constants.TYPES:
                 raise exceptions.TypeInvalid()
 
     @staticmethod
@@ -114,7 +114,7 @@ class YGOProDeck:
         race = params.get('race')
 
         if race is not None:
-            if race not in constants.RACE:
+            if race.lower() not in constants.RACE:
                 raise exceptions.RaceInvalid()
 
     @staticmethod
@@ -122,7 +122,7 @@ class YGOProDeck:
         attribute = params.get('attribute')
 
         if attribute is not None:
-            if attribute not in constants.ATTRIBUTES:
+            if attribute.lower() not in constants.ATTRIBUTES:
                 raise exceptions.AttributeInvalid()
 
     @staticmethod
@@ -143,5 +143,5 @@ class YGOProDeck:
         linkmarker = params.get('linkmarker')
 
         if linkmarker is not None:
-            if linkmarker not in constants.LINK_MARKERS:
+            if linkmarker.lower() not in constants.LINK_MARKERS:
                 raise exceptions.LinkMarkerInvalid()
