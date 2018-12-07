@@ -28,6 +28,11 @@ def test_validate_attribute(client):
         client.get_cards(attribute='Not a valid attribute')
 
 
+def test_validate_link_invalid_value(client):
+    with pytest.raises(ygoprodeck.exceptions.LinkRatingInvalid):
+        client.get_cards(link='Not a valid link')
+
+
 def test_change_defense_param_key(client):
     params = client.change_defense_param_key({'def_': 2500})
     assert params == {'def': 2500}

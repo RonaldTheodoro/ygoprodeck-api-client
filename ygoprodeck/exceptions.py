@@ -18,3 +18,7 @@ class RaceInvalid(YGOProDeckException):
 
 class AttributeInvalid(YGOProDeckException):
     message = 'Card attribute not exists'
+
+
+class LinkRatingInvalid(YGOProDeckException):
+    message = 'Link rating must be a integer between 1 and 8'

@@ -67,6 +67,7 @@ class YGOProDeck:
         self.validate_type(params)
         self.validate_level_rank(params)
         self.validate_attribute(params)
+        self.validate_link(params)
 
     @staticmethod
     def change_defense_param_key(params):
@@ -122,3 +123,16 @@ class YGOProDeck:
         if attribute is not None:
             if attribute not in constants.ATTRIBUTES:
                 raise exceptions.AttributeInvalid()
+
+    @staticmethod
+    def validate_link(params):
+        link = params.get('link')
+
+        if link is not None:
+            try:
+                link = int(link)
+            except ValueError:
+                raise exceptions.LinkRatingInvalid()
+
+            if link not in range(1, 9):
+                raise exceptions.LevelOrRankInvalid()
