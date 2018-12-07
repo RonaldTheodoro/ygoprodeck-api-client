@@ -14,3 +14,7 @@ class LevelOrRankInvalid(YGOProDeckException):
 
 class RaceInvalid(YGOProDeckException):
     message = 'Card race not exists'
+
+
+class AttributeInvalid(YGOProDeckException):
+    message = 'Card attribute not exists'
