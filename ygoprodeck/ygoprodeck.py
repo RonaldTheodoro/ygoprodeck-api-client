@@ -112,4 +112,4 @@ class YGOProDeck:
 
         if race is not None:
             if race not in constants.RACE:
-
+                raise exceptions.RaceInvalid()
