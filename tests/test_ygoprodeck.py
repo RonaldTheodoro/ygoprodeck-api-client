@@ -31,3 +31,8 @@ def test_validate_attribute(client):
 def test_change_defense_param_key(client):
     params = client.change_defense_param_key({'def_': 2500})
     assert params == {'def': 2500}
+
+
+def test_change_type_param_key(client):
+    params = client.change_type_param_key({'type_': 'Effect Monster'})
+    assert params == {'type': 'Effect Monster'}
