@@ -33,6 +33,11 @@ def test_validate_link_invalid_value(client):
         client.get_cards(link='Not a valid link')
 
 
+def test_validate_link_out_of_range(client):
+    with pytest.raises(ygoprodeck.exceptions.LinkRatingInvalid):
+        client.get_cards(link=15)
+
+
 def test_change_defense_param_key(client):
     params = client.change_defense_param_key({'def_': 2500})
     assert params == {'def': 2500}

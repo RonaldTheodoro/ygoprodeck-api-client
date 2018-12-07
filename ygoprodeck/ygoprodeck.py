@@ -135,4 +135,4 @@ class YGOProDeck:
                 raise exceptions.LinkRatingInvalid()
 
             if link not in range(1, 9):
-                raise exceptions.LevelOrRankInvalid()
+                raise exceptions.LinkRatingInvalid()
