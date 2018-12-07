@@ -62,7 +62,7 @@ class YGOProDeck:
             params = self.change_defense_param_key(params)
 
         if 'type_' in params.keys():
-            params = self.change_defense_param_key(params)
+            params = self.change_type_param_key(params)
 
         self.validate_type(params)
         self.validate_level_rank(params)
