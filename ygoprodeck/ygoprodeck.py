@@ -68,6 +68,7 @@ class YGOProDeck:
         self.validate_level_rank(params)
         self.validate_attribute(params)
         self.validate_link(params)
+        self.validate_linkmarker(params)
 
     @staticmethod
     def change_defense_param_key(params):
@@ -136,3 +137,11 @@ class YGOProDeck:
 
             if link not in range(1, 9):
                 raise exceptions.LinkRatingInvalid()
+
+    @staticmethod
+    def validate_linkmarker(params):
+        linkmarker = params.get('linkmarker')
+
+        if linkmarker is not None:
+            if linkmarker not in constants.LINK_MARKERS:
+                raise exceptions.LinkMarkerInvalid()

@@ -64,4 +64,15 @@ TYPES = [
 
 ATTRIBUTES = ['dark', 'divine', 'earth', 'fire', 'light', 'water', 'wind', ]
 
-LANGUAGE = ['english', 'french', ]
+LANGUAGE = ['english', 'french',]
+
+LINK_MARKERS = [
+    'top',
+    'top-right',
+    'top-left',
+    'left',
+    'top',
+    'bottom',
+    'bottom-right',
+    'bottom-left',
+]

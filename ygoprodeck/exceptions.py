@@ -22,3 +22,7 @@ class AttributeInvalid(YGOProDeckException):
 
 class LinkRatingInvalid(YGOProDeckException):
     message = 'Link rating must be a integer between 1 and 8'
+
+
+class LinkMarkerInvalid(YGOProDeckException):
+    message = 'Link marker not exists'
