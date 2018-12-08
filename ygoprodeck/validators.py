@@ -2,7 +2,7 @@ from . import constants, exceptions
 
 
 def card_type(card_type):
-    if card_type.lower() not in constants.TYPES:
+    if card_type not in constants.TYPES:
         raise exceptions.TypeInvalid()
 
 
@@ -17,12 +17,12 @@ def card_level_rank(level):
 
 
 def card_race(race):
-    if race.lower() not in constants.RACE:
+    if race not in constants.RACE:
         raise exceptions.RaceInvalid()
 
 
 def card_attribute(attribute):
-    if attribute.lower() not in constants.ATTRIBUTES:
+    if attribute not in constants.ATTRIBUTES:
         raise exceptions.AttributeInvalid()
 
 
@@ -37,7 +37,7 @@ def card_link(link):
 
 
 def card_linkmarker(linkmarker):
-    if linkmarker.lower() not in constants.LINK_MARKERS:
+    if linkmarker not in constants.LINK_MARKERS:
         raise exceptions.LinkMarkerInvalid()
 
 
@@ -52,12 +52,12 @@ def card_pendulum_scale(scale):
 
 
 def card_banlist(banlist):
-    if banlist.lower() not in constants.BANLIST:
+    if banlist not in constants.BANLIST:
         raise exceptions.BanlistInvalid()
 
 
 def card_sort_params(sort):
-    if sort.lower() not in constants.SORT_PARAMS:
+    if sort not in constants.SORT_PARAMS:
         raise exceptions.SortParamInvalid()
 
 
