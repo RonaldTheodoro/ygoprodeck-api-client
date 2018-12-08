@@ -66,13 +66,3 @@ def test_validate_banlist(client):
 def test_validate_sort_params(client):
     with pytest.raises(ygoprodeck.exceptions.SortParamInvalid):
         client.get_cards(sort='A invalid parameter')
-
-
-def test_change_defense_param_key(client):
-    params = client.change_defense_param_key({'def_': 2500})
-    assert params == {'def': 2500}
-
-
-def test_change_type_param_key(client):
-    params = client.change_type_param_key({'type_': 'Effect Monster'})
-    assert params == {'type': 'Effect Monster'}

@@ -73,21 +73,3 @@ class YGOProDeck:
                 validators.validators[key](value)
 
         return params
-
-    @staticmethod
-    def change_defense_param_key(params):
-        try:
-            params['def'] = params.pop('def_')
-        except KeyError:
-            pass
-
-        return params
-
-    @staticmethod
-    def change_type_param_key(params):
-        try:
-            params['type'] = params.pop('type_')
-        except KeyError:
-            pass
-
-        return params
