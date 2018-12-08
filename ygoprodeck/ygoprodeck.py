@@ -13,6 +13,17 @@ class YGOProDeck:
         self.validate = validate
 
     def make_request(self, url, **kwargs):
+        """Make a HTTP request.
+
+        Args:
+            url (url): Api endpoint.
+
+        Returns:
+            (list[dict]): List of cards
+
+        Raises:
+            requests.exceptions.RequestException: Failed to connect
+        """
         response = self.session.get(url, **kwargs)
 
         response.raise_for_status()
@@ -20,6 +31,11 @@ class YGOProDeck:
         return response.json()
 
     def get_all_cards(self):
+        """Get all cards.
+
+        Returns:
+            (list[dict]): List of cards
+        """
         return self.make_request(self.url_cardinfo)
 
     def get_cards(self, **params):
@@ -55,7 +71,7 @@ class YGOProDeck:
             la (str): Filter the cards by Language.
 
         Returns:
-            (list[dict]): List of cards
+            (list[dict]): List of cards.
         """
         params = validators.remove_underline(params)
 
@@ -65,6 +81,17 @@ class YGOProDeck:
         return self.make_request(self.url_cardinfo, params=params)
 
     def validate_params(self, params):
+        """Validate query parameters before make HTTP request.
+
+        Args:
+            params (dict): Url query parameters.
+
+        Returns:
+            (dict): Validated url query parameters.
+
+        Raises:
+            YGOProDeckException: Parameter is not valid.
+        """
         for key, value in params.items():
             if key in validators.validators.keys():
                 if isinstance(value, str):
