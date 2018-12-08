@@ -1,6 +1,17 @@
 from . import constants, exceptions
 
 
+def remove_underline(params):
+    modified_params = {'def_': 'def', 'type_': 'type'}
+
+    for key, value in modified_params.items():
+        if key in params.keys():
+            param_value = params.pop(key)
+            params[value] = param_value
+
+    return params
+
+
 def card_type(card_type):
     if card_type not in constants.TYPES:
         raise exceptions.TypeInvalid()

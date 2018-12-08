@@ -57,23 +57,20 @@ class YGOProDeck:
         Returns:
             (list[dict]): List of cards
         """
-        params = self.validate_params(params)
+        params = validators.remove_underline(params)
+
+        if self.validate:
+            params = self.validate_params(params)
+
         return self.make_request(self.url_cardinfo, params=params)
 
     def validate_params(self, params):
-        if 'def_' in params.keys():
-            params = self.change_defense_param_key(params)
+        for key, value in params.items():
+            if key in validators.validators.keys():
+                if isinstance(value, str):
+                    value = value.lower()
 
-        if 'type_' in params.keys():
-            params = self.change_type_param_key(params)
-
-        if self.validate:
-            for key, value in params.items():
-                if key in validators.validators.keys():
-                    if isinstance(value, str):
-                        value = value.lower()
-
-                    validators.validators[key](value)
+                validators.validators[key](value)
 
         return params
 
