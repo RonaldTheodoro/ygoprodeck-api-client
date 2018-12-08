@@ -71,6 +71,7 @@ class YGOProDeck:
         self.validate_linkmarker(params)
         self.validate_pendulum_scale(params)
         self.validate_banlist(params)
+        self.validate_sort_params(params)
 
     @staticmethod
     def change_defense_param_key(params):
@@ -168,3 +169,12 @@ class YGOProDeck:
         if banlist is not None:
             if banlist.lower() not in constants.BANLIST:
                 raise exceptions.BanlistInvalid()
+
+
+    @staticmethod
+    def validate_sort_params(params):
+        sort = params.get('sort')
+
+        if sort is not None:
+            if sort.lower() not in constants.SORT_PARAMS:
+                raise exceptions.SortParamInvalid()

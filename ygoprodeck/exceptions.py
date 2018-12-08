@@ -34,3 +34,7 @@ class PendulumScaleInvalid(YGOProDeckException):
 
 class BanlistInvalid(YGOProDeckException):
     message = 'Banlist must be TCG, OCG or Goat'
+
+
+class SortParamInvalid(YGOProDeckException):
+    message = 'Sort parameters must be atk, def, name, type, level, id or new'

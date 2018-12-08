@@ -58,6 +58,11 @@ def test_validate_banlist(client):
         client.get_cards(banlist='Ban firewall')
 
 
+def test_validate_sort_params(client):
+    with pytest.raises(ygoprodeck.exceptions.SortParamInvalid):
+        client.get_cards(sort='A invalid parameter')
+
+
 def test_change_defense_param_key(client):
     params = client.change_defense_param_key({'def_': 2500})
     assert params == {'def': 2500}

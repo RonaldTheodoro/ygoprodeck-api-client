@@ -77,4 +77,6 @@ LINK_MARKERS = [
     'bottom-left',
 ]
 
-BANLIST = ['tcg', 'ocg', 'goat']
+BANLIST = ['tcg', 'ocg', 'goat',]
+
+SORT_PARAMS = ['atk', 'def', 'name', 'type', 'level', 'id', 'new',]
