@@ -9,6 +9,9 @@ class YGOProDeck:
 
     session = requests.Session()
 
+    def __init__(self, validate=True):
+        self.validate = validate
+
     def make_request(self, url, **kwargs):
         response = self.session.get(url, **kwargs)
 
