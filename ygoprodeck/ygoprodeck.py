@@ -66,12 +66,15 @@ class YGOProDeck:
 
         self.validate_type(params)
         self.validate_level_rank(params)
+        self.validate_race(params)
         self.validate_attribute(params)
         self.validate_link(params)
         self.validate_linkmarker(params)
         self.validate_pendulum_scale(params)
         self.validate_banlist(params)
         self.validate_sort_params(params)
+
+        return params
 
     @staticmethod
     def change_defense_param_key(params):
