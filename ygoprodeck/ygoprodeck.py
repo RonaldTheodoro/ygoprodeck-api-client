@@ -68,9 +68,12 @@ class YGOProDeck:
             params = self.change_type_param_key(params)
 
         if self.validate:
-        for key, value in params.items():
-            if key in validators.validators.keys():
-                validators.validators[key](value)
+            for key, value in params.items():
+                if key in validators.validators.keys():
+                    if isinstance(value, str):
+                        value = value.lower()
+
+                    validators.validators[key](value)
 
         return params
 
