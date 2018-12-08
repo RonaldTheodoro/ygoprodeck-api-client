@@ -26,3 +26,7 @@ class LinkRatingInvalid(YGOProDeckException):
 
 class LinkMarkerInvalid(YGOProDeckException):
     message = 'Link marker not exists'
+
+
+class PendulumScaleInvalid(YGOProDeckException):
+    message = 'Pendulum scale must be a integer between 0 and 13'

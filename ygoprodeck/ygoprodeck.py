@@ -69,6 +69,7 @@ class YGOProDeck:
         self.validate_attribute(params)
         self.validate_link(params)
         self.validate_linkmarker(params)
+        self.validate_pendulum_scale(params)
 
     @staticmethod
     def change_defense_param_key(params):
@@ -145,3 +146,16 @@ class YGOProDeck:
         if linkmarker is not None:
             if linkmarker.lower() not in constants.LINK_MARKERS:
                 raise exceptions.LinkMarkerInvalid()
+
+    @staticmethod
+    def validate_pendulum_scale(params):
+        scale = params.get('scale')
+
+        if scale is not None:
+            try:
+                scale = int(scale)
+            except ValueError:
+                raise exceptions.PendulumScaleInvalid()
+
+            if scale not in range(0, 14):
+                raise exceptions.PendulumScaleInvalid()
