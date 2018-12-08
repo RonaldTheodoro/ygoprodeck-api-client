@@ -70,6 +70,7 @@ class YGOProDeck:
         self.validate_link(params)
         self.validate_linkmarker(params)
         self.validate_pendulum_scale(params)
+        self.validate_banlist(params)
 
     @staticmethod
     def change_defense_param_key(params):
@@ -159,3 +160,11 @@ class YGOProDeck:
 
             if scale not in range(0, 14):
                 raise exceptions.PendulumScaleInvalid()
+
+    @staticmethod
+    def validate_banlist(params):
+        banlist = params.get('banlist')
+
+        if banlist is not None:
+            if banlist.lower() not in constants.BANLIST:
+                raise exceptions.BanlistInvalid()

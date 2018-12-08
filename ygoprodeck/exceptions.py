@@ -30,3 +30,7 @@ class LinkMarkerInvalid(YGOProDeckException):
 
 class PendulumScaleInvalid(YGOProDeckException):
     message = 'Pendulum scale must be a integer between 0 and 13'
+
+
+class BanlistInvalid(YGOProDeckException):
+    message = 'Banlist must be TCG, OCG or Goat'

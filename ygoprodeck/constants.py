@@ -76,3 +76,5 @@ LINK_MARKERS = [
     'bottom-right',
     'bottom-left',
 ]
+
+BANLIST = ['tcg', 'ocg', 'goat']

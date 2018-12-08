@@ -53,6 +53,11 @@ def test_validate_pendulum_scale_out_of_range(client):
         client.get_cards(scale=-1)
 
 
+def test_validate_banlist(client):
+    with pytest.raises(ygoprodeck.exceptions.BanlistInvalid):
+        client.get_cards(banlist='Ban firewall')
+
+
 def test_change_defense_param_key(client):
     params = client.change_defense_param_key({'def_': 2500})
     assert params == {'def': 2500}
