@@ -232,7 +232,7 @@ class Card:
         Returns:
             str: Card link markers.
         """
-        return self.linkmarkers
+        return self._linkmarkers
 
     @linkmarkers.setter
     def linkmarkers(self, linkmarkers):
