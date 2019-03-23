@@ -17,6 +17,8 @@ from . import validators
 class YGOProDeck:
     url_cardinfo = 'https://db.ygoprodeck.com/api/v4/cardinfo.php'
 
+    url_api = 'https://db.ygoprodeck.com/api/v4/cardinfo.php'
+
     session = requests.Session()
 
     def __init__(self, validate=True):
@@ -46,7 +48,7 @@ class YGOProDeck:
         Returns:
             (list[dict]): List of cards
         """
-        return self.make_request(self.url_cardinfo)
+        return self.make_request(self.url_api)
 
     def get_cards(self, **params):
         """Get a list of cards.
@@ -89,7 +91,7 @@ class YGOProDeck:
         if self.validate:
             params = self.validate_params(params)
 
-        return self.make_request(self.url_cardinfo, params=params)
+        return self.make_request(self.url_api, params=params)
 
     def validate_params(self, params):
         """Validate query parameters before make HTTP request.
