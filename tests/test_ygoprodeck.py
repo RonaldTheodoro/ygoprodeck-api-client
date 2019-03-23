@@ -8,7 +8,7 @@ from .context import ygoprodeck
 
 @pytest.fixture
 def client():
-    return ygoprodeck.YGOProDeck()
+    return ygoprodeck.Client()
 
 
 def test_validate_type(client):

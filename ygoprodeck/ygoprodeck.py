@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-ygoprodeck.YGOProDeck
+ygoprodeck.Client
 ~~~~~~~~~~~~~~~~~~~~~
 
 Main class responsable to make the API requests and call the validators.
@@ -14,7 +14,7 @@ import requests
 from . import validators
 
 
-class YGOProDeck:
+class Client:
     """Access the API and retrive the cards data"""
 
     url_api = 'https://db.ygoprodeck.com/api/v4/cardinfo.php'
