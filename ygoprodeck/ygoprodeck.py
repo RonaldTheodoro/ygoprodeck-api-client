@@ -16,7 +16,6 @@ from . import validators
 
 class YGOProDeck:
     url_cardinfo = 'https://db.ygoprodeck.com/api/v4/cardinfo.php'
-    url_pics = 'https://ygoprodeck.com/pics/'
 
     session = requests.Session()
 
@@ -58,7 +57,8 @@ class YGOProDeck:
             fname (str): A fuzzy search using a string. For example &
                 fname=Magician to search by all cards with "Magician" in the
                 name.
-            type_ (str): The type of card you want to filter by, type is a reserved word in python so use type_.
+            type_ (str): The type of card you want to filter by, type is a
+                reserved word in python so use type_.
             atk (int): Filter by atk value.
             def_ (int): Filter by def value, def is a reserved word in python
                 so use def_ to represente defense.
@@ -78,7 +78,7 @@ class YGOProDeck:
                 Prank-Kids, Blue-Eyes, etc).
             banlist (str): Filter the cards by banlist (TCG, OCG, Goat).
             sort (str): Sort the order of the cards (atk, def, name, type,
-                level, id).
+                level, id, new).
             la (str): Filter the cards by Language.
 
         Returns:
