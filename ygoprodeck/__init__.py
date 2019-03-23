@@ -8,7 +8,7 @@ YGOPro deck API client
 This is a simple client for YGOPro deck API.
 """
 
-from .ygoprodeck import Client
+from .client import Client
 from . import constants, exceptions, models
 
 
