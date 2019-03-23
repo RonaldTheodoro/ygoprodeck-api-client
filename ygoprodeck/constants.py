@@ -64,7 +64,7 @@ TYPES = [
 
 ATTRIBUTES = ['dark', 'divine', 'earth', 'fire', 'light', 'water', 'wind', ]
 
-LANGUAGE = ['english', 'french',]
+LANGUAGE = ['english', 'french', ]
 
 LINK_MARKERS = [
     'top',
@@ -77,6 +77,6 @@ LINK_MARKERS = [
     'bottom-left',
 ]
 
-BANLIST = ['tcg', 'ocg', 'goat',]
+BANLIST = ['tcg', 'ocg', 'goat', ]
 
-SORT_PARAMS = ['atk', 'def', 'name', 'type', 'level', 'id', 'new',]
+SORT_PARAMS = ['atk', 'def', 'name', 'type', 'level', 'id', 'new', ]
