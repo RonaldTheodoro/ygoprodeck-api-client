@@ -82,7 +82,7 @@ LINK_MARKERS = [
     'top-right',
     'top-left',
     'left',
-    'top',
+    'right',
     'bottom',
     'bottom-right',
     'bottom-left',
