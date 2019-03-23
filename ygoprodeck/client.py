@@ -19,10 +19,9 @@ class Client:
 
     url_api = 'https://db.ygoprodeck.com/api/v4/cardinfo.php'
 
-    session = requests.Session()
-
-    def __init__(self, validate=True):
-        self.validate = validate
+    def __init__(self, validate=True, session=None):
+        self._validate = validate
+        self._session = session or requests.Session()
 
     def make_request(self, url, **kwargs):
         """Make a HTTP request.
@@ -36,7 +35,7 @@ class Client:
         Raises:
             requests.exceptions.RequestException: Failed to connect
         """
-        response = self.session.get(url, **kwargs)
+        response = self._session.get(url, **kwargs)
 
         response.raise_for_status()
 
@@ -88,7 +87,7 @@ class Client:
         """
         params = validators.remove_underline(params)
 
-        if self.validate:
+        if self._validate:
             params = self.validate_params(params)
 
         return self.make_request(self.url_api, params=params)

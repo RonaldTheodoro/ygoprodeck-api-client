@@ -20,9 +20,7 @@ with Betamax.configure() as config:
 @pytest.fixture
 @pytest.mark.usefixtures('betamax_session')
 def client(betamax_session):
-    client = ygoprodeck.Client(validate=False)
-    client.session = betamax_session
-    return client
+    return ygoprodeck.Client(validate=False, session=betamax_session)
 
 
 def test_get_cards(client):
