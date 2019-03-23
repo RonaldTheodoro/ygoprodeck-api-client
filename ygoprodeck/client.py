@@ -23,7 +23,7 @@ class Client:
         self._validate = validate
         self._session = session or requests.Session()
 
-    def make_request(self, url, **kwargs):
+    def _make_request(self, **kwargs):
         """Make a HTTP request.
 
         Args:
@@ -35,7 +35,7 @@ class Client:
         Raises:
             requests.exceptions.RequestException: Failed to connect
         """
-        response = self._session.get(url, **kwargs)
+        response = self._session.get(self.url_api, **kwargs)
 
         response.raise_for_status()
 
@@ -47,7 +47,7 @@ class Client:
         Returns:
             (list[dict]): List of cards
         """
-        return self.make_request(self.url_api)
+        return self._make_request()
 
     def get_cards(self, **params):
         """Get a list of cards.
@@ -90,7 +90,7 @@ class Client:
         if self._validate:
             params = self.validate_params(params)
 
-        return self.make_request(self.url_api, params=params)
+        return self._make_request(params=params)
 
     def validate_params(self, params):
         """Validate query parameters before make HTTP request.
