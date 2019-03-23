@@ -242,10 +242,11 @@ class Card:
             link (list[str]): Card link markers.
         """
         if linkmarkers is not None:
-            validators.card_linkmarker(linkmarkers)
             linkmarkers = linkmarkers.split(',')
             if linkmarkers[-1] == '':
                 linkmarkers.pop(-1)
+            for marker in linkmarkers:
+                validators.card_linkmarker(marker)
         self._linkmarkers = linkmarkers
 
     @property
