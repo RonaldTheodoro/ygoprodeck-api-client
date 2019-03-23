@@ -83,7 +83,7 @@ class Client:
             la (str): Filter the cards by Language.
 
         Returns:
-            (list[dict]): List of cards.
+            list[dict]: List of cards.
         """
         params = validators.remove_underline(params)
 
@@ -99,7 +99,7 @@ class Client:
             params (dict): Url query parameters.
 
         Returns:
-            (dict): Validated url query parameters.
+            dict: Validated url query parameters.
 
         Raises:
             YGOProDeckException: Parameter is not valid.
