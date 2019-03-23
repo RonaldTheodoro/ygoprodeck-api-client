@@ -88,11 +88,11 @@ class Client:
         params = validators.remove_underline(params)
 
         if self._validate:
-            params = self.validate_params(params)
+            params = self._validate_params(params)
 
         return self._make_request(params=params)
 
-    def validate_params(self, params):
+    def _validate_params(self, params):
         """Validate query parameters before make HTTP request.
 
         Args:
