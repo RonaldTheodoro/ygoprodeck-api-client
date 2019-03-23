@@ -71,6 +71,11 @@ def test_validate_sort_params(client):
         client.get_cards(sort='A invalid parameter')
 
 
+def test_card_banlist_status():
+    with pytest.raises(ygoprodeck.exceptions.BanlistStatusInvalid):
+        ygoprodeck.validators.card_banlist_status('banlist')
+
+
 def test_remove_underline():
     params = {'atk': 3000, 'def_': 2100, 'type_': 'normal monster'}
     params_expected = {'atk': 3000, 'def': 2100, 'type': 'normal monster'}
