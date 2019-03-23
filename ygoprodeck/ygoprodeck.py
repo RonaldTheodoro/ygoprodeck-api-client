@@ -15,7 +15,7 @@ from . import validators
 
 
 class YGOProDeck:
-    url_cardinfo = 'https://db.ygoprodeck.com/api/v2/cardinfo.php'
+    url_cardinfo = 'https://db.ygoprodeck.com/api/v4/cardinfo.php'
     url_pics = 'https://ygoprodeck.com/pics/'
 
     session = requests.Session()
