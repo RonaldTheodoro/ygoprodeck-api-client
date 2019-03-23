@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+ygoprodeck.exceptions
+~~~~~~~~~~~~~~~~~~~~~
+
+This module contains the set of exceptions used in this package.
+"""
 
 
 class YGOProDeckException(Exception):

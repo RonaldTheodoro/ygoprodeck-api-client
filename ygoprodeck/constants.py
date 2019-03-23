@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+ygoprodeck.constants
+~~~~~~~~~~~~~~~~~~~~
+
+Constant values.
+"""
+
+
 RACE = [
     'aqua',
     'beast',

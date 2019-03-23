@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+ygoprodeck.validators
+~~~~~~~~~~~~~~~~~~~~
+
+Functions to validate the parameters before make a request.
+"""
+
+
 from . import constants, exceptions
 
 

@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+ygoprodeck.YGOProDeck
+~~~~~~~~~~~~~~~~~~~~~
+
+Main class responsable to make the API requests and call the validators.
+"""
+
+
 import requests
 
 from . import validators
