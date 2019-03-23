@@ -47,3 +47,9 @@ class BanlistInvalid(YGOProDeckException):
 
 class SortParamInvalid(YGOProDeckException):
     message = 'Sort parameters must be atk, def, name, type, level, id or new'
+
+
+class BanlistStatusInvalid(YGOProDeckException):
+    message = (
+        'Banlist status must be banned, limited, semi-limited or unlimited'
+    )
