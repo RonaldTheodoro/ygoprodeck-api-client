@@ -1,0 +1,100 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "python-requests/2.21.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "*/*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://db.ygoprodeck.com/api/v4/cardinfo.php?name=Meteor+B.+Dragon"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "base64_string": "H4sIAAAAAAAAA52QwU7DMBBEf8XylTYxBQL0SAkSh6Iq4tZUkXEW1zSJLXuDFCH+nXVKCly5ed56Zsfebj+4qfmS34osE9fZgs94J1sgsgYE69ldwu691LajCQ4uTh76YGzH1rYLCJ54DUERL3kB9TwfIPy4Ss7OWDmFTYw8Eg9kubgSYgx4JbEQo2jgHRqSN3T2UsWNpwYS0ZuXHscaj0UekVd7+G427SccACuUmuCmWJ3P8ychLmdHrmwdL288tKZv2co2DSiMT3o2XbxjWqmh6n1ssUd0YZmmAS2VgERbqxuQzoRE2TYdtHWe8tRhlM6okE5/mbw5/TutCq1s/pd5tP5N/tztvgANL4T8vwEAAA=="
+        },
+        "headers": {
+          "Date": [
+            "Sat, 23 Mar 2019 21:54:34 GMT"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Content-Length": [
+            "274"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Set-Cookie": [
+            "__cfduid=dcb6eb4e40e5dd83d3405299c9de18cde1553378073; expires=Sun, 22-Mar-20 21:54:33 GMT; path=/; domain=.ygoprodeck.com; HttpOnly"
+          ],
+          "X-Powered-By": [
+            "PHP/7.1.27"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "X-Frame-Options": [
+            "SAMEORIGIN"
+          ],
+          "Cache-Control": [
+            "public, max-age=259200"
+          ],
+          "Expires": [
+            "Tue, 26 Mar 2019 21:54:34 GMT"
+          ],
+          "Vary": [
+            "Accept-Encoding,User-Agent"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "CF-Cache-Status": [
+            "MISS"
+          ],
+          "Accept-Ranges": [
+            "bytes"
+          ],
+          "Expect-CT": [
+            "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+          ],
+          "Server": [
+            "cloudflare"
+          ],
+          "CF-RAY": [
+            "4bc3a4fee8971635-LIM"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://db.ygoprodeck.com/api/v4/cardinfo.php?name=Meteor+B.+Dragon"
+      },
+      "recorded_at": "2019-03-23T21:54:34"
+    }
+  ],
+  "recorded_with": "betamax/0.8.1"
+}
