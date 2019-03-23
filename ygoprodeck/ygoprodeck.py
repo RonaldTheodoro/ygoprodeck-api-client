@@ -15,7 +15,7 @@ from . import validators
 
 
 class YGOProDeck:
-    url_cardinfo = 'https://db.ygoprodeck.com/api/v4/cardinfo.php'
+    """Access the API and retrive the cards data"""
 
     url_api = 'https://db.ygoprodeck.com/api/v4/cardinfo.php'
 
