@@ -90,4 +90,6 @@ LINK_MARKERS = [
 
 BANLIST = ['tcg', 'ocg', 'goat', ]
 
+BANLIST_STATUS = ['banned', 'limited', 'semi-limited', 'unlimited', ]
+
 SORT_PARAMS = ['atk', 'def', 'name', 'type', 'level', 'id', 'new', ]
