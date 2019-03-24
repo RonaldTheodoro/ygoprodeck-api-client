@@ -11,7 +11,7 @@ This module contains the models used in the package.
 from . import validators
 
 
-class Card:
+class Card(object):
     """Model that represent a card instance"""
 
     def __init__(self):

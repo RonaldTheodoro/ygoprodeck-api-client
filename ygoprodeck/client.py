@@ -14,7 +14,7 @@ import requests
 from . import validators
 
 
-class Client:
+class Client(object):
     """Access the API and retrive the cards data"""
 
     url_api = 'https://db.ygoprodeck.com/api/v4/cardinfo.php'
