@@ -9,6 +9,7 @@ requests = "*"
 [dev-packages]
 pytest = "*"
 pytest-cov = "*"
+betamax = "*"
 
 [requires]
 python_version = "3.6"

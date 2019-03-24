@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+tests.context
+~~~~~~~~~~~~~~~~~~~~~~
+
+Add the ygoprodeck module to the tests context.
+"""
+
 import os
 import sys
 

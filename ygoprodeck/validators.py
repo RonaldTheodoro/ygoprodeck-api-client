@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+ygoprodeck.validators
+~~~~~~~~~~~~~~~~~~~~
+
+Functions to validate the parameters before make a request.
+"""
+
+
 from . import constants, exceptions
 
 
@@ -160,6 +171,21 @@ def card_sort_params(sort):
         raise exceptions.SortParamInvalid()
 
 
+def card_banlist_status(banlist_status):
+    """Validate banlist status
+
+    Args:
+        banlist_status {str}: Banlist status
+
+    Raises:
+        exceptions.BanlistStatusInvalid: Banlist status must be banned,
+            limited, semi-limited or unlimited
+    """
+
+    if banlist_status not in constants.BANLIST_STATUS:
+        raise exceptions.BanlistStatusInvalid()
+
+
 validators = {
     'type': card_type,
     'level': card_level_rank,
@@ -169,5 +195,6 @@ validators = {
     'linkmarker': card_linkmarker,
     'scale': card_pendulum_scale,
     'banlist': card_banlist,
+    'banlist_status': card_banlist_status,
     'sort': card_sort_params,
 }

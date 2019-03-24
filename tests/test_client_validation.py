@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import pytest
 
 from .context import ygoprodeck
@@ -5,7 +8,7 @@ from .context import ygoprodeck
 
 @pytest.fixture
 def client():
-    return ygoprodeck.YGOProDeck()
+    return ygoprodeck.Client()
 
 
 def test_validate_type(client):
@@ -66,6 +69,11 @@ def test_validate_banlist(client):
 def test_validate_sort_params(client):
     with pytest.raises(ygoprodeck.exceptions.SortParamInvalid):
         client.get_cards(sort='A invalid parameter')
+
+
+def test_card_banlist_status():
+    with pytest.raises(ygoprodeck.exceptions.BanlistStatusInvalid):
+        ygoprodeck.validators.card_banlist_status('banlist')
 
 
 def test_remove_underline():

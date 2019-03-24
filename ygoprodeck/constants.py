@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+ygoprodeck.constants
+~~~~~~~~~~~~~~~~~~~~
+
+Constant values.
+"""
+
+
 RACE = [
     'aqua',
     'beast',
@@ -64,19 +75,21 @@ TYPES = [
 
 ATTRIBUTES = ['dark', 'divine', 'earth', 'fire', 'light', 'water', 'wind', ]
 
-LANGUAGE = ['english', 'french',]
+LANGUAGE = ['english', 'french', ]
 
 LINK_MARKERS = [
     'top',
     'top-right',
     'top-left',
     'left',
-    'top',
+    'right',
     'bottom',
     'bottom-right',
     'bottom-left',
 ]
 
-BANLIST = ['tcg', 'ocg', 'goat',]
+BANLIST = ['tcg', 'ocg', 'goat', ]
 
-SORT_PARAMS = ['atk', 'def', 'name', 'type', 'level', 'id', 'new',]
+BANLIST_STATUS = ['banned', 'limited', 'semi-limited', 'unlimited', ]
+
+SORT_PARAMS = ['atk', 'def', 'name', 'type', 'level', 'id', 'new', ]
