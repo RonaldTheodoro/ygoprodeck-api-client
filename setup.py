@@ -15,7 +15,7 @@ setuptools.setup(
     author_email='ronald.silva4@fatec.sp.gov.br',
     url='https://github.com/RonaldTheodoro/ygoprodeck-api-client',
     packages=('ygoprodeck',),
-    install_requirements=('requests',),
+    install_requires=('requests',),
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Intended Audience :: Developers',
