@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import json
+
 import pytest
 from betamax import Betamax
 
@@ -27,3 +29,15 @@ def client(betamax_session):
 @pytest.fixture
 def card():
     return ygoprodeck.models.Card()
+
+
+@pytest.fixture
+def get_payload():
+
+    def load_json(file_name):
+        json_path = settings.test_payloads / file_name
+        with json_path.open(mode='r') as fp:
+            payload = json.load(fp)
+        return payload
+
+    return load_json
