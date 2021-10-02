@@ -13,6 +13,10 @@ class YGOProDeckException(Exception):
     pass
 
 
+class IdNameError(YGOProDeckException):
+    message = 'Id and name cannot be passed in the same request'
+
+
 class TypeInvalid(YGOProDeckException):
     message = 'Card type is not valid'
 

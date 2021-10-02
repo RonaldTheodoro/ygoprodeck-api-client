@@ -35,6 +35,20 @@ def remove_underline(params):
     return params
 
 
+def card_id_and_name(params):
+    """Check if id and name are passed in the same requests
+    Args:
+        params (dict): Request params.
+
+    Raises:
+        exceptions.IdNameError: Id and name cannot be passed in the same
+            request.
+
+    """
+    if 'name' in params and 'id' in params:
+        raise exceptions.IdNameError()
+
+
 def card_type(card_type):
     """Validate card type.
 
@@ -167,7 +181,7 @@ def card_sort_params(sort):
         exceptions.SortParamInvalid: Sort parameters must be atk, def, name,
             type, level, id or new.
     """
-    if sort not in constants.SORT_PARAMS:
+    if not constants.SortParams.is_valid_value(sort):
         raise exceptions.SortParamInvalid()
 
 

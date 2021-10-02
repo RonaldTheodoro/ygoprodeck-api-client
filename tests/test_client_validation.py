@@ -6,6 +6,11 @@ import pytest
 from .context import ygoprodeck
 
 
+def test_validate_id_and_name(client):
+    with pytest.raises(ygoprodeck.exceptions.IdNameError):
+        client.get_cards(id=1, name='card name')
+
+
 def test_validate_type(client):
     with pytest.raises(ygoprodeck.exceptions.TypeInvalid):
         client.get_cards(type_='not valid type')

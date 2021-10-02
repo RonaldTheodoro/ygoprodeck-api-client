@@ -145,6 +145,9 @@ class Client(object):
         Raises:
             YGOProDeckException: Parameter is not valid.
         """
+
+        validators.card_id_and_name(params)
+
         for key, value in params.items():
             if key in validators.validators.keys():
                 if isinstance(value, str):
