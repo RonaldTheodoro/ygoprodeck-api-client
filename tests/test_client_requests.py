@@ -1,20 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
-
 import pytest
 import requests
 from betamax import Betamax
 
 from .context import ygoprodeck
+from .context import settings
 
-
-WORKERS_DIR = os.path.dirname(os.path.abspath(__file__))
-CASSETTES_DIR = os.path.join(WORKERS_DIR, u'resources', u'cassettes')
 
 with Betamax.configure() as config:
-    config.cassette_library_dir = CASSETTES_DIR
+    config.cassette_library_dir = settings.cassettes_dir
 
 
 @pytest.fixture

@@ -8,10 +8,11 @@ tests.context
 Add the ygoprodeck module to the tests context.
 """
 
-import os
 import sys
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from settings import settings
+
+sys.path.append(settings.base_dir)
 
 import ygoprodeck
 
