@@ -8,90 +8,137 @@ ygoprodeck.constants
 Constant values.
 """
 
+import enum
 
-RACE = [
-    'aqua',
-    'beast',
-    'beast-warrior',
-    'creator-god',
-    'cyberse',
-    'dinosaur',
-    'divine-beast',
-    'dragon',
-    'fairy',
-    'fiend',
-    'fish',
-    'insect',
-    'machine',
-    'plant',
-    'psychic',
-    'pyro',
-    'reptile',
-    'rock',
-    'sea serpent',
-    'spellcaster',
-    'thunder',
-    'warrior',
-    'winged beast',
-    'normal',
-    'field',
-    'equip',
-    'continuous',
-    'quick-play',
-    'ritual',
-    'counter',
-]
 
-TYPES = [
-    'effect monster',
-    'flip effect monster',
-    'flip tuner effect monster',
-    'gemini monster',
-    'normal monster',
-    'normal tuner monster',
-    'pendulum effect fusion monster',
-    'pendulum effect monster',
-    'pendulum flip effect monster',
-    'pendulum normal monster',
-    'pendulum tuner effect monster',
-    'ritual effect monster',
-    'ritual monster',
-    'skill card',
-    'spell card',
-    'spirit monster',
-    'toon monster',
-    'trap card',
-    'tuner monster',
-    'union effect monster',
-    'union tuner effect monster',
-    'fusion monster',
-    'link monster',
-    'synchro monster',
-    'synchro pendulum effect monster',
-    'synchro tuner monster',
-    'xyz monster',
-    'xyz pendulum effect monster',
-]
+class EnumMixin(enum.Enum):
 
-ATTRIBUTES = ['dark', 'divine', 'earth', 'fire', 'light', 'water', 'wind', ]
+    @classmethod
+    def is_valid_value(cls, value):
+        return any(item.value == value for item in cls)
 
-LANGUAGE = ['english', 'french', ]
+    @classmethod
+    def valid_values(cls):
+        return [v.value for n, v in cls.__members__.items()]
 
-LINK_MARKERS = [
-    'top',
-    'top-right',
-    'top-left',
-    'left',
-    'right',
-    'bottom',
-    'bottom-right',
-    'bottom-left',
-]
 
-BANLIST = ['tcg', 'ocg', 'goat', ]
+class Race(EnumMixin):
+    AQUA = 'aqua'
+    BEAST = 'beast'
+    BEAST_WARRIOR = 'beast-warrior'
+    CREATOR_GOD = 'creator-god'
+    CYBERSE = 'cyberse'
+    DINOSAUR = 'dinosaur'
+    DIVINE_BEAST = 'divine-beast'
+    DRAGON = 'dragon'
+    FAIRY = 'fairy'
+    FIEND = 'fiend'
+    FISH = 'fish'
+    INSECT = 'insect'
+    MACHINE = 'machine'
+    PLANT = 'plant'
+    PSYCHIC = 'psychic'
+    PYRO = 'pyro'
+    REPTILE = 'reptile'
+    ROCK = 'rock'
+    SEA_SERPENT = 'sea serpent'
+    SPELLCASTER = 'spellcaster'
+    THUNDER = 'thunder'
+    WARRIOR = 'warrior'
+    WINGED_BEAST = 'winged beast'
+    NORMAL = 'normal'
+    FIELD = 'field'
+    EQUIP = 'equip'
+    CONTINUOUS = 'continuous'
+    QUICK_PLAY = 'quick-play'
+    RITUAL = 'ritual'
+    COUNTER = 'counter'
 
-BANLIST_STATUS = ['banned', 'limited', 'semi-limited', 'unlimited', ]
 
-SORT_PARAMS = ['atk', 'def', 'name', 'type', 'level', 'id', 'new', ]
+class CardTypes(EnumMixin):
+    EFFECT_MONSTER = 'effect monster'
+    FLIP_EFFECT_MONSTER = 'flip effect monster'
+    FLIP_TUNER_EFFECT_MONSTER = 'flip tuner effect monster'
+    GEMINI_MONSTER = 'gemini monster'
+    NORMAL_MONSTER = 'normal monster'
+    NORMAL_TUNER_MONSTER = 'normal tuner monster'
+    PENDULUM_EFFECT_FUSION_MONSTER = 'pendulum effect fusion monster'
+    PENDULUM_EFFECT_MONSTER = 'pendulum effect monster'
+    PENDULUM_FLIP_EFFECT_MONSTER = 'pendulum flip effect monster'
+    PENDULUM_NORMAL_MONSTER = 'pendulum normal monster'
+    PENDULUM_TUNER_EFFECT_MONSTER = 'pendulum tuner effect monster'
+    RITUAL_EFFECT_MONSTER = 'ritual effect monster'
+    RITUAL_MONSTER = 'ritual monster'
+    SKILL_CARD = 'skill card'
+    SPELL_CARD = 'spell card'
+    SPIRIT_MONSTER = 'spirit monster'
+    TOON_MONSTER = 'toon monster'
+    TRAP_CARD = 'trap card'
+    TUNER_MONSTER = 'tuner monster'
+    UNION_EFFECT_MONSTER = 'union effect monster'
+    UNION_TUNER_EFFECT_MONSTER = 'union tuner effect monster'
+    FUSION_MONSTER = 'fusion monster'
+    LINK_MONSTER = 'link monster'
+    SYNCHRO_MONSTER = 'synchro monster'
+    SYNCHRO_PENDULUM_EFFECT_MONSTER = 'synchro pendulum effect monster'
+    SYNCHRO_TUNER_MONSTER = 'synchro tuner monster'
+    XYZ_MONSTER = 'xyz monster'
+    XYZ_PENDULUM_EFFECT_MONSTER = 'xyz pendulum effect monster'
 
-FORMAT = ['tcg', 'goat', 'ocg goat', 'speed duel', 'rush duel', 'duel links', ]
+
+class Attributes(EnumMixin):
+    DARK = 'dark'
+    DIVINE = 'divine'
+    EARTH = 'earth'
+    FIRE = 'fire'
+    LIGHT = 'light'
+    WATER = 'water'
+    WIND = 'wind'
+
+
+class Language(EnumMixin):
+    ENGLISH = 'english'
+    FRENCH = 'french'
+
+
+class LinkMarkers(EnumMixin):
+    TOP = 'top'
+    TOP_RIGHT = 'top-right'
+    TOP_LEFT = 'top-left'
+    LEFT = 'left'
+    RIGHT = 'right'
+    BOTTOM = 'bottom'
+    BOTTOM_RIGHT = 'bottom-right'
+    BOTTOM_LEFT = 'bottom-left'
+
+
+class Banlist(EnumMixin):
+    TCG = 'tcg'
+    OCG = 'ocg'
+    GOAT = 'goat'
+
+
+class BanlistStatus(EnumMixin):
+    BANNED = 'banned'
+    LIMITED = 'limited'
+    SEMI_LIMITED = 'semi-limited'
+    UNLIMITED = 'unlimited'
+
+
+class SortParams(EnumMixin):
+    ATK = 'atk'
+    DEF = 'def'
+    NAME = 'name'
+    TYPE = 'type'
+    LEVEL = 'level'
+    ID = 'id'
+    NEW = 'new'
+
+
+class Format(EnumMixin):
+    TCG = 'tcg'
+    GOAT = 'goat'
+    OCG_GOAT = 'ocg goat'
+    SPEED_DUEL = 'speed duel'
+    RUSH_DUEL = 'rush duel'
+    DUEL_LINKS = 'duel links'

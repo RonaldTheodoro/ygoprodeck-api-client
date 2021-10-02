@@ -44,7 +44,7 @@ def card_type(card_type):
     Raises:
         exceptions.TypeInvalid: Card type is not valid.
     """
-    if card_type not in constants.TYPES:
+    if not constants.CardTypes.is_valid_value(card_type):
         raise exceptions.TypeInvalid()
 
 
@@ -76,7 +76,7 @@ def card_race(race):
     Raises:
         exceptions.RaceInvalid: Card race do not exists.
     """
-    if race not in constants.RACE:
+    if not constants.Race.is_valid_value(race):
         raise exceptions.RaceInvalid()
 
 
@@ -89,7 +89,7 @@ def card_attribute(attribute):
     Raises:
         exceptions.AttributeInvalid: Card attribute do not exists.
     """
-    if attribute not in constants.ATTRIBUTES:
+    if not constants.Attributes.is_valid_value(attribute):
         raise exceptions.AttributeInvalid()
 
 
@@ -121,7 +121,7 @@ def card_linkmarker(linkmarker):
     Raises:
         exceptions.LinkMarkerInvalid: Link marker do not exists.
     """
-    if linkmarker not in constants.LINK_MARKERS:
+    if not constants.LinkMarkers.is_valid_value(linkmarker):
         raise exceptions.LinkMarkerInvalid()
 
 
@@ -153,7 +153,7 @@ def card_banlist(banlist):
     Raises:
         exceptions.BanlistInvalid: Banlist must be TCG, OCG or Goat.
     """
-    if banlist not in constants.BANLIST:
+    if not constants.Banlist.is_valid_value(banlist):
         raise exceptions.BanlistInvalid()
 
 
@@ -182,7 +182,7 @@ def card_banlist_status(banlist_status):
             limited, semi-limited or unlimited
     """
 
-    if banlist_status not in constants.BANLIST_STATUS:
+    if not constants.BanlistStatus.is_valid_value(banlist_status):
         raise exceptions.BanlistStatusInvalid()
 
 def card_format(card_format):
@@ -195,7 +195,7 @@ def card_format(card_format):
         exceptions.CardFormatInvalid: Banlist status must be banned,
             limited, semi-limited or unlimited
     """
-    if card_format not in constants.FORMAT:
+    if not constants.Format.is_valid_value(card_format):
         raise exceptions.CardFormatInvalid()
 
 
