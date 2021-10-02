@@ -97,8 +97,10 @@ class Attributes(EnumMixin):
 
 
 class Language(EnumMixin):
-    ENGLISH = 'english'
-    FRENCH = 'french'
+    FRENCH = 'fr'
+    GERMAN = 'de'
+    PORTUGUESE = 'pt'
+    ITALIAN = 'it'
 
 
 class LinkMarkers(EnumMixin):
