@@ -20,6 +20,7 @@ class Client(object):
     url_api = 'https://db.ygoprodeck.com/api/v7/cardinfo.php'
 
     def __init__(self, validate=True, session=None):
+        self.__validate = validate
         self.session = session
 
     @property
@@ -30,6 +31,7 @@ class Client(object):
     def session(self, session):
         self.__session = session or requests.Session()
 
+    def __make_request(self, **kwargs):
         """Make a HTTP request.
 
         Args:
@@ -41,7 +43,7 @@ class Client(object):
         Raises:
             requests.exceptions.RequestException: Failed to connect
         """
-        response = self._session.get(self.url_api, **kwargs)
+        response = self.__session.get(self.url_api, **kwargs)
 
         response.raise_for_status()
 
@@ -53,7 +55,7 @@ class Client(object):
         Returns:
             (list[dict]): List of cards
         """
-        return self._make_request()
+        return self.__make_request()
 
     def get_cards(self, **params):
         """Get a list of cards.
@@ -93,12 +95,12 @@ class Client(object):
         """
         params = validators.remove_underline(params)
 
-        if self._validate:
-            params = self._validate_params(params)
+        if self.__validate:
+            params = self.__validate_params(params)
 
-        return self._make_request(params=params)
+        return self.__make_request(params=params)
 
-    def _validate_params(self, params):
+    def __validate_params(self, params):
         """Validate query parameters before make HTTP request.
 
         Args:
