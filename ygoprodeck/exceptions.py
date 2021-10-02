@@ -53,3 +53,10 @@ class BanlistStatusInvalid(YGOProDeckException):
     message = (
         'Banlist status must be banned, limited, semi-limited or unlimited'
     )
+
+
+class CardFormatInvalid(YGOProDeckException):
+    message = (
+        'Card format must be tcg, goat, ocg goat, speed duel, '
+        'rush duel or duel links'
+    )

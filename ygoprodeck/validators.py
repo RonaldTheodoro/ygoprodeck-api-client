@@ -25,7 +25,7 @@ def remove_underline(params):
     Returns:
         (dict): Validated url query parameters.
     """
-    modified_params = {'def_': 'def', 'type_': 'type'}
+    modified_params = {'def_': 'def', 'type_': 'type', 'format_': 'format'}
 
     for key, value in modified_params.items():
         if key in params.keys():
@@ -185,6 +185,19 @@ def card_banlist_status(banlist_status):
     if banlist_status not in constants.BANLIST_STATUS:
         raise exceptions.BanlistStatusInvalid()
 
+def card_format(card_format):
+    """Validate format status
+
+    Args:
+        card_format {str}: Card format
+
+    Raises:
+        exceptions.CardFormatInvalid: Banlist status must be banned,
+            limited, semi-limited or unlimited
+    """
+    if card_format not in constants.FORMAT:
+        raise exceptions.CardFormatInvalid()
+
 
 validators = {
     'type': card_type,
@@ -197,4 +210,5 @@ validators = {
     'banlist': card_banlist,
     'banlist_status': card_banlist_status,
     'sort': card_sort_params,
+    'format': card_format,
 }

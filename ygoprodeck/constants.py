@@ -93,3 +93,5 @@ BANLIST = ['tcg', 'ocg', 'goat', ]
 BANLIST_STATUS = ['banned', 'limited', 'semi-limited', 'unlimited', ]
 
 SORT_PARAMS = ['atk', 'def', 'name', 'type', 'level', 'id', 'new', ]
+
+FORMAT = ['tcg', 'goat', 'ocg goat', 'speed duel', 'rush duel', 'duel links', ]

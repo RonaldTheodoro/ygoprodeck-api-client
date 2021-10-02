@@ -94,10 +94,12 @@ class Client(object):
             banlist (str): Filter the cards by banlist (TCG, OCG, Goat).
             sort (str): Sort the order of the cards (atk, def, name, type,
                 level, id, new).
-            format (str): Sort the format of the cards (tcg, goat, ocg goat,
+            format_ (str): Sort the format of the cards (tcg, goat, ocg goat,
                 speed duel, rush duel, duel links). Note: Duel Links is not
                 100% accurate but is close. Using tcg results in all cards with
-                a set TCG Release Date and excludes Speed Duel/Rush Duel cards.
+                a set TCG Release Date and excludes Speed Duel/Rush Duel cards,
+                format is a reserved word in python so use format_ to
+                represente format.
             misc (str): Show additional response info (Card Views, Beta Name,
                 etc.).
             staple (str): Check if card is a staple.
