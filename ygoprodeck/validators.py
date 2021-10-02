@@ -199,6 +199,19 @@ def card_format(card_format):
         raise exceptions.CardFormatInvalid()
 
 
+def card_has_effect(has_effect):
+    """Validate has_effect
+
+    Args:
+        has_effect {bool}: has effect
+
+    Raises:
+        exceptions.HasEffectInvalid: has effect must be a boolean
+    """
+    if not isinstance(has_effect, bool):
+        raise exceptions.HasEffectInvalid()
+
+
 validators = {
     'type': card_type,
     'level': card_level_rank,
@@ -211,4 +224,5 @@ validators = {
     'banlist_status': card_banlist_status,
     'sort': card_sort_params,
     'format': card_format,
+    'has_effect': card_has_effect,
 }

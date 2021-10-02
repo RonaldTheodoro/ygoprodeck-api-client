@@ -60,3 +60,7 @@ class CardFormatInvalid(YGOProDeckException):
         'Card format must be tcg, goat, ocg goat, speed duel, '
         'rush duel or duel links'
     )
+
+
+class HasEffectInvalid(YGOProDeckException):
+    message = 'has effect must be a boolean'

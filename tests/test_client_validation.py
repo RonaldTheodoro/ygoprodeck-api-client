@@ -76,6 +76,11 @@ def test_validate_card_format(client):
         client.get_cards(format_='A not valid format')
 
 
+def test_validate_has_effect(client):
+    with pytest.raises(ygoprodeck.exceptions.HasEffectInvalid):
+        client.get_cards(has_effect='A not valid flag')
+
+
 def test_remove_underline():
     params = {'atk': 3000, 'def_': 2100, 'type_': 'normal monster'}
     params_expected = {'atk': 3000, 'def': 2100, 'type': 'normal monster'}
