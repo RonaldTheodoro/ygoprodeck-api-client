@@ -3,24 +3,10 @@
 
 import pytest
 import requests
-from betamax import Betamax
-
-from .context import ygoprodeck
-from .context import settings
 
 
-with Betamax.configure() as config:
-    config.cassette_library_dir = settings.cassettes_dir
-
-
-@pytest.fixture
-@pytest.mark.usefixtures('betamax_session')
-def client(betamax_session):
-    return ygoprodeck.Client(validate=False, session=betamax_session)
-
-
-def test_get_cards(client):
-    cards = client.get_cards(name='Meteor B. Dragon')
+def test_get_cards(client_mock):
+    cards = client_mock.get_cards(name='Meteor B. Dragon')
     expected = {
         'id': 90660762,
         'name': 'Meteor Black Dragon',
@@ -81,6 +67,6 @@ def test_get_cards(client):
     assert cards['data'][0] == expected
 
 
-def test_get_cards_invalid(client):
+def test_get_cards_invalid(client_mock):
     with pytest.raises(requests.exceptions.HTTPError):
-        client.get_cards(name='Red-Eyes Ultimate Dragon')
+        client_mock.get_cards(name='Red-Eyes Ultimate Dragon')

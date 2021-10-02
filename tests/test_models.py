@@ -6,11 +6,6 @@ import pytest
 from .context import ygoprodeck
 
 
-@pytest.fixture
-def card():
-    return ygoprodeck.models.Card()
-
-
 def test_model_type(card):
     with pytest.raises(ygoprodeck.exceptions.TypeInvalid):
         card.type_ = 'Not a valid type'
