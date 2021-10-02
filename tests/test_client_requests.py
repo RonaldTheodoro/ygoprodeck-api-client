@@ -50,9 +50,10 @@ def test_get_card_image_small(client_mock):
     pass
 
 
-@pytest.mark.skip    
-def test_get_card_sets(client_mock):
-    pass
+def test_get_card_sets(client_mock, get_payload):
+    card_sets_expected = get_payload('test_get_card_sets.json')
+    card_sets = client_mock.get_card_sets()
+    assert card_sets == card_sets_expected
 
 
 @pytest.mark.skip    
