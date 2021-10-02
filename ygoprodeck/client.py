@@ -106,7 +106,9 @@ class Client(object):
         Returns:
             (dict): random card
         """
-        return self.__make_request(url=f'{self.url_image_small}/{card_id}.jpg')
+        response = self.__session.get(f'{self.url_image_small}/{card_id}.jpg')
+        response.raise_for_status()
+        return response.content
 
     def get_card_sets(self):
         """Get all card sets
