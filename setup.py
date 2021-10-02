@@ -23,5 +23,3 @@ setuptools.setup(
         'Programming Language :: Python :: 2',
     ],
 )
-
-
