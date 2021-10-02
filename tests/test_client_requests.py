@@ -5,6 +5,13 @@ import pytest
 import requests
 
 
+def test_card_data(client_mock):
+    assert client_mock.card_data is None
+    cards = client_mock.get_all_cards()
+    assert isinstance(cards, dict)
+    assert client_mock.card_data is not None
+
+
 def test_get_cards(client_mock):
     cards = client_mock.get_cards(name='Meteor B. Dragon')
     expected = {

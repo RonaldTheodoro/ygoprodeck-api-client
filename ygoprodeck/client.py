@@ -20,8 +20,13 @@ class Client(object):
     url_api = 'https://db.ygoprodeck.com/api/v7/cardinfo.php'
 
     def __init__(self, validate=True, session=None):
+        self.__card_data = None
         self.__validate = validate
         self.session = session
+
+    @property
+    def card_data(self):
+        return self.__card_data
 
     @property
     def session(self):
@@ -55,7 +60,9 @@ class Client(object):
         Returns:
             (list[dict]): List of cards
         """
-        return self.__make_request()
+        if self.__card_data is None:
+            self.__card_data = self.__make_request()
+        return self.__card_data
 
     def get_cards(self, **params):
         """Get a list of cards.
