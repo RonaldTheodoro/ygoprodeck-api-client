@@ -97,6 +97,7 @@ class Attributes(EnumMixin):
 
 
 class Language(EnumMixin):
+    ENGLISH = 'en'
     FRENCH = 'fr'
     GERMAN = 'de'
     PORTUGUESE = 'pt'
