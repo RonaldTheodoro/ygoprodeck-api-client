@@ -41,3 +41,15 @@ def get_payload():
         return payload
 
     return load_json
+
+
+@pytest.fixture
+def get_image():
+
+    def load_image(file_name):
+        image_path = settings.test_images / file_name
+        with image_path.open(mode='rb') as fp:
+            image = fp.read()
+        return image
+
+    return load_image

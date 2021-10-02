@@ -41,12 +41,12 @@ def test_get_random_card(client_mock, get_payload):
 
 
 @pytest.mark.skip
-def test_get_card_image(client_mock, get_payload):
+def test_get_card_image(client_mock, get_image):
     pass
 
 
 @pytest.mark.skip
-def test_get_card_image_small(client_mock, get_payload):
+def test_get_card_image_small(client_mock, get_image):
     pass
 
 

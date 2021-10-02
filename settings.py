@@ -16,5 +16,9 @@ class Settings:
     def test_payloads(self):
         return self.test_resources / 'payloads'
 
+    @property
+    def test_images(self):
+        return self.test_resources / 'images'
+
 
 settings = Settings()
