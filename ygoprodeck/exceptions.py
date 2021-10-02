@@ -68,3 +68,12 @@ class CardFormatInvalid(YGOProDeckException):
 
 class HasEffectInvalid(YGOProDeckException):
     message = 'has effect must be a boolean'
+
+
+class LanguageInvalid(YGOProDeckException): 
+    message = (
+        "No valid language set. This API accepts the following language "
+        "values: 'fr', 'de', 'it' or 'pt' which are respectively 'French', "
+        "'German', 'Italian' or 'Portuguese'. For English, please exclude "
+        "passing language altogether."
+    )

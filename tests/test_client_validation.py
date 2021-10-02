@@ -86,6 +86,13 @@ def test_validate_has_effect(client):
         client.get_cards(has_effect='A not valid flag')
 
 
+def test_validate_language(client):
+    with pytest.raises(ygoprodeck.exceptions.LanguageInvalid):
+        client.get_cards(language='A not valid language')
+    with pytest.raises(ygoprodeck.exceptions.LanguageInvalid):
+        client.get_cards(language='en')
+
+
 def test_remove_underline():
     params = {'atk': 3000, 'def_': 2100, 'type_': 'normal monster'}
     params_expected = {'atk': 3000, 'def': 2100, 'type': 'normal monster'}

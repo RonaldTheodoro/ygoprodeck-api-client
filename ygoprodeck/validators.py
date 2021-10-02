@@ -225,6 +225,21 @@ def card_has_effect(has_effect):
     if not isinstance(has_effect, bool):
         raise exceptions.HasEffectInvalid()
 
+def card_language(language):
+    """Validate language
+
+    Args:
+        language {str}: language
+
+    Raises:
+        exceptions.LanguageInvalid: No valid language set. This API accepts the
+            following language values: 'fr', 'de', 'it' or 'pt' which are
+            respectively 'French', 'German', 'Italian' or 'Portuguese'.
+            For English, please exclude passing language altogether.
+    """
+    if not constants.Language.is_valid_value(language):
+        raise exceptions.LanguageInvalid()
+
 
 validators = {
     'type': card_type,
@@ -239,4 +254,5 @@ validators = {
     'sort': card_sort_params,
     'format': card_format,
     'has_effect': card_has_effect,
+    'language': card_language,
 }
