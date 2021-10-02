@@ -17,7 +17,7 @@ from . import validators
 class Client(object):
     """Access the API and retrive the cards data"""
 
-    url_api = 'https://db.ygoprodeck.com/api/v4/cardinfo.php'
+    url_api = 'https://db.ygoprodeck.com/api/v7/cardinfo.php'
 
     def __init__(self, validate=True, session=None):
         self._validate = validate
