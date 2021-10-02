@@ -45,7 +45,7 @@ def test_get_card_image(client_mock):
     pass
 
 
-@pytest.mark.skip    
+@pytest.mark.skip
 def test_get_card_image_small(client_mock):
     pass
 
@@ -56,17 +56,18 @@ def test_get_card_sets(client_mock, get_payload):
     assert card_sets == card_sets_expected
 
 
-@pytest.mark.skip    
-def test_get_card_sets_info(client_mock):
-    pass
+def test_get_card_sets_info(client_mock, get_payload):
+    card_set_info_expected = get_payload('test_get_card_sets_info.json')
+    card_set_info = client_mock.get_card_sets_info('MACR-EN036')
+    assert card_set_info == card_set_info_expected
 
 
-@pytest.mark.skip    
+@pytest.mark.skip
 def test_get_archetypes(client_mock):
     pass
 
 
-@pytest.mark.skip    
+@pytest.mark.skip
 def test_get_api_database_version(client_mock):
     pass
 

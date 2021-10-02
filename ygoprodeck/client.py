@@ -21,7 +21,7 @@ class Client(object):
     url_api = f'{url_base}/cardinfo.php'
     url_random_card = f'{url_base}/randomcard.php'
     url_card_sets = f'{url_base}/cardsets.php'
-    url_card_sets_info = f'{url_base}/cardsetsinfo.php.'
+    url_card_sets_info = f'{url_base}/cardsetsinfo.php'
     url_archetypes = f'{url_base}/archetypes.php'
     url_db_version = f'{url_base}/checkDBVer.php'
 
