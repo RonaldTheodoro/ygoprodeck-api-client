@@ -68,9 +68,12 @@ def test_get_archetypes(client_mock, get_payload):
     assert archtypes == archtypes_expected
 
 
-@pytest.mark.skip
 def test_get_api_database_version(client_mock, get_payload):
-    pass
+    database_version_expected = get_payload(
+        'test_get_api_database_version.json'
+    )
+    database_version = client_mock.get_api_database_version()
+    assert database_version == database_version_expected
 
 
 def test_get_cards_invalid(client_mock):
