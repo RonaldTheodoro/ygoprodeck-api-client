@@ -17,7 +17,9 @@ from . import validators
 class Client(object):
     """Access the API and retrive the cards data"""
 
-    url_api = 'https://db.ygoprodeck.com/api/v7/cardinfo.php'
+    url_base = 'https://db.ygoprodeck.com/api/v7'
+    url_api = f'{url_base}/cardinfo.php'
+    url_random_card = f'{url_base}/randomcard.php'
 
     def __init__(self, validate=True, session=None):
         self.__card_data = None
@@ -36,11 +38,12 @@ class Client(object):
     def session(self, session):
         self.__session = session or requests.Session()
 
-    def __make_request(self, **kwargs):
+    def __make_request(self, url=None, **kwargs):
         """Make a HTTP request.
 
         Args:
             url (url): Api endpoint.
+            kwargs (dict): Requests params
 
         Returns:
             (list[dict]): List of cards
@@ -48,10 +51,11 @@ class Client(object):
         Raises:
             requests.exceptions.RequestException: Failed to connect
         """
-        response = self.__session.get(self.url_api, **kwargs)
+        if url is None:
+            url = self.url_api
 
+        response = self.__session.get(url, **kwargs)
         response.raise_for_status()
-
         return response.json()
 
     def get_all_cards(self):
@@ -63,6 +67,14 @@ class Client(object):
         if self.__card_data is None:
             self.__card_data = self.__make_request()
         return self.__card_data
+
+    def get_random_card(self):
+        """Get random card
+
+        Returns:
+            (dict): random card
+        """
+        return self.__make_request(url=self.url_random_card)
 
     def get_cards(self, **params):
         """Get a list of cards.
