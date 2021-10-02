@@ -20,6 +20,14 @@ class Client(object):
     url_base = 'https://db.ygoprodeck.com/api/v7'
     url_api = f'{url_base}/cardinfo.php'
     url_random_card = f'{url_base}/randomcard.php'
+    url_card_sets = f'{url_base}/cardsets.php'
+    url_card_sets_info = f'{url_base}/cardsetsinfo.php.'
+    url_archetypes = f'{url_base}/archetypes.php'
+    url_db_version = f'{url_base}/checkDBVer.php'
+
+    url_image_base = 'https://storage.googleapis.com/ygoprodeck.com'
+    url_image = f'{url_image_base}/pics'
+    url_image_small = f'{url_image_base}/pics_small'
 
     def __init__(self, validate=True, session=None):
         self.__card_data = None
@@ -75,6 +83,64 @@ class Client(object):
             (dict): random card
         """
         return self.__make_request(url=self.url_random_card)
+
+    def get_card_image(self, card_id):
+        """Get card image
+
+        Args:
+            card_id (int): Card id
+
+        Returns:
+            (dict): random card
+        """
+        return self.__make_request(url=f'{self.url_image}/{card_id}')
+
+    def get_card_image_small(self, card_id):
+        """Get card image small
+
+        Args:
+            card_id (int): Card id
+
+        Returns:
+            (dict): random card
+        """
+        return self.__make_request(url=f'{self.url_image_small}/{card_id}')
+
+    def get_card_sets(self):
+        """Get all card sets
+
+        Returns:
+            (list[dict]): Card sets
+        """
+        return self.__make_request(url=self.url_card_sets)
+
+    def get_card_sets_info(self, setcode):
+        """Get all card sets info
+
+        Args:
+            setcode (str): Card setcode
+
+        Returns:
+            (list[dict]): Card sets info
+        """
+        params = {'setcode': setcode}
+        return self.__make_request(url=self.url_card_sets_info, params=params)
+
+    def get_archetypes(self):
+        """Get all archtypes
+
+        Returns:
+            (list[dict]): Archtypes
+        """
+        return self.__make_request(url=self.url_archetypes)
+
+    def get_api_database_version(self):
+        """Get api database version
+
+        Returns:
+            (list[dict]): database version
+        """
+        return self.__make_request(url=self.url_db_version)
 
     def get_cards(self, **params):
         """Get a list of cards.

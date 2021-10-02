@@ -39,6 +39,37 @@ def test_get_random_card(client_mock, get_payload):
     assert card_02 == random_cards['card_02']
     assert card_03 == random_cards['card_03']
 
+
+@pytest.mark.skip
+def test_get_card_image(client_mock):
+    pass
+
+
+@pytest.mark.skip    
+def test_get_card_image_small(client_mock):
+    pass
+
+
+@pytest.mark.skip    
+def test_get_card_sets(client_mock):
+    pass
+
+
+@pytest.mark.skip    
+def test_get_card_sets_info(client_mock):
+    pass
+
+
+@pytest.mark.skip    
+def test_get_archetypes(client_mock):
+    pass
+
+
+@pytest.mark.skip    
+def test_get_api_database_version(client_mock):
+    pass
+
+
 def test_get_cards_invalid(client_mock):
     with pytest.raises(requests.exceptions.HTTPError):
         client_mock.get_cards(name='Red-Eyes Ultimate Dragon')
