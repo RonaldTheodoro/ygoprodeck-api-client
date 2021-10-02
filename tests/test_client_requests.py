@@ -63,7 +63,7 @@ def test_get_card_sets_info(client_mock, get_payload):
 
 
 def test_get_archetypes(client_mock, get_payload):
-    archtypes_expected = get_payload('test_get_archtypes.json')
+    archtypes_expected = get_payload('test_get_archetypes.json')
     archtypes = client_mock.get_archetypes()
     assert archtypes == archtypes_expected
 
