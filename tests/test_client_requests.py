@@ -41,12 +41,12 @@ def test_get_random_card(client_mock, get_payload):
 
 
 @pytest.mark.skip
-def test_get_card_image(client_mock):
+def test_get_card_image(client_mock, get_payload):
     pass
 
 
 @pytest.mark.skip
-def test_get_card_image_small(client_mock):
+def test_get_card_image_small(client_mock, get_payload):
     pass
 
 
@@ -62,13 +62,14 @@ def test_get_card_sets_info(client_mock, get_payload):
     assert card_set_info == card_set_info_expected
 
 
-@pytest.mark.skip
-def test_get_archetypes(client_mock):
-    pass
+def test_get_archetypes(client_mock, get_payload):
+    archtypes_expected = get_payload('test_get_archtypes.json')
+    archtypes = client_mock.get_archetypes()
+    assert archtypes == archtypes_expected
 
 
 @pytest.mark.skip
-def test_get_api_database_version(client_mock):
+def test_get_api_database_version(client_mock, get_payload):
     pass
 
 
