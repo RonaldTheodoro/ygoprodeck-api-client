@@ -20,10 +20,16 @@ class Client(object):
     url_api = 'https://db.ygoprodeck.com/api/v7/cardinfo.php'
 
     def __init__(self, validate=True, session=None):
-        self._validate = validate
-        self._session = session or requests.Session()
+        self.session = session
 
-    def _make_request(self, **kwargs):
+    @property
+    def session(self):
+        return self.__session
+
+    @session.setter
+    def session(self, session):
+        self.__session = session or requests.Session()
+
         """Make a HTTP request.
 
         Args:
