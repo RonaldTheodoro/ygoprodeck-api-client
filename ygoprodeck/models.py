@@ -9,7 +9,6 @@ This module contains the models used in the package.
 """
 
 from dataclasses import dataclass, field
-from typing import Optional
 
 from . import validators
 
@@ -44,37 +43,37 @@ class CardPrice:
 class Card:
     """Model that represent a card instance"""
 
-    id: Optional[int] = None
-    name: Optional[str] = None
-    _type: Optional[str] = field(default=None)
-    desc: Optional[str] = None
-    atk: Optional[int] = None
-    def_: Optional[int] = None
-    _level: Optional[int] = field(default=None)
-    _attribute: Optional[str] = field(default=None)
-    _scale: Optional[int] = field(default=None)
-    _race: Optional[str] = field(default=None)
-    archetype: Optional[str] = None
+    id: int = None
+    name: str = None
+    _type: str = field(default=None)
+    desc: str = None
+    atk: int = None
+    def_: int = None
+    _level: int = field(default=None)
+    _attribute: str = field(default=None)
+    _scale: int = field(default=None)
+    _race: str = field(default=None)
+    archetype: str = None
 
-    _link: Optional[int] = field(default=None)
-    _linkmarkers: Optional[list[str]] = field(default=None)
+    _link: int = field(default=None)
+    _linkmarkers: list[str] = field(default=None)
 
-    _set_tag: Optional[list[str]] = field(default=None)
-    _setcode: Optional[list[str]] = field(default=None)
+    _set_tag: list[str] = field(default=None)
+    _setcode: list[str] = field(default=None)
 
-    image_url: Optional[str] = None
-    image_url_small: Optional[str] = None
+    image_url: str = None
+    image_url_small: str = None
 
-    _ban_tcg: Optional[str] = field(default=None)
-    _ban_ocg: Optional[str] = field(default=None)
-    _ban_goat: Optional[str] = field(default=None)
+    _ban_tcg: str = field(default=None)
+    _ban_ocg: str = field(default=None)
+    _ban_goat: str = field(default=None)
 
-    _card_sets: Optional[list[CardSet]] = None
-    _card_images: Optional[list[CardImage]] = None
-    _card_prices: Optional[list[CardPrice]] = None
+    _card_sets: list[CardSet] = None
+    _card_images: list[CardImage] = None
+    _card_prices: list[CardPrice] = None
 
     @property
-    def type_(self) -> Optional[str]:
+    def type_(self) -> str:
         return self._type
 
     @type_.setter
@@ -83,7 +82,7 @@ class Card:
         self._type = type_
 
     @property
-    def level(self) -> Optional[int]:
+    def level(self) -> int:
         return self._level
 
     @level.setter
@@ -93,7 +92,7 @@ class Card:
         self._level = level
 
     @property
-    def attribute(self) -> Optional[str]:
+    def attribute(self) -> str:
         return self._attribute
 
     @attribute.setter
@@ -103,7 +102,7 @@ class Card:
         self._attribute = attribute
 
     @property
-    def scale(self) -> Optional[int]:
+    def scale(self) -> int:
         return self._scale
 
     @scale.setter
@@ -113,7 +112,7 @@ class Card:
         self._scale = scale
 
     @property
-    def race(self) -> Optional[str]:
+    def race(self) -> str:
         return self._race
 
     @race.setter
@@ -122,7 +121,7 @@ class Card:
         self._race = race
 
     @property
-    def link(self) -> Optional[int]:
+    def link(self) -> int:
         return self._link
 
     @link.setter
@@ -132,7 +131,7 @@ class Card:
         self._link = link
 
     @property
-    def linkmarkers(self) -> Optional[list[str]]:
+    def linkmarkers(self) -> list[str]:
         return self._linkmarkers
 
     @linkmarkers.setter
@@ -146,7 +145,7 @@ class Card:
         self._linkmarkers = linkmarkers
 
     @property
-    def set_tag(self) -> Optional[list[str]]:
+    def set_tag(self) -> list[str]:
         return self._set_tag
 
     @set_tag.setter
@@ -157,7 +156,7 @@ class Card:
         self._set_tag = set_tag
 
     @property
-    def setcode(self) -> Optional[list[str]]:
+    def setcode(self) -> list[str]:
         return self._setcode
 
     @setcode.setter
@@ -168,7 +167,7 @@ class Card:
         self._setcode = setcode
 
     @property
-    def ban_tcg(self) -> Optional[str]:
+    def ban_tcg(self) -> str:
         return self._ban_tcg
 
     @ban_tcg.setter
@@ -178,17 +177,17 @@ class Card:
         self._ban_tcg = ban_tcg
 
     @property
-    def ban_ocg(self: str) -> Optional[str]:
+    def ban_ocg(self: str) -> str:
         return self._ban_ocg
 
     @ban_ocg.setter
-    def ban_ocg(self, ban_ocg: str) -> Optional[str]:
+    def ban_ocg(self, ban_ocg: str) -> str:
         if ban_ocg is not None:
             validators.card_banlist_status(ban_ocg)
         self._ban_ocg = ban_ocg
 
     @property
-    def ban_goat(self) -> Optional[str]:
+    def ban_goat(self) -> str:
         return self._ban_goat
 
     @ban_goat.setter
@@ -198,25 +197,25 @@ class Card:
         self._ban_goat = ban_goat
 
     @property
-    def card_sets(self) -> Optional[list[CardSet]]:
+    def card_sets(self) -> list[CardSet]:
         return self._card_sets
 
     @card_sets.setter
-    def card_sets(self, card_sets: list):
+    def card_sets(self, card_sets: list[str]):
         self._card_sets = [CardSet(**c) for c in card_sets]
 
     @property
-    def card_images(self) -> Optional[list[CardImage]]:
+    def card_images(self) -> list[CardImage]:
         return self._card_images
 
     @card_images.setter
-    def card_images(self, card_images: list):
+    def card_images(self, card_images: list[str]):
         self._card_images = [CardImage(**c) for c in card_images]
 
     @property
-    def card_prices(self) -> Optional[list[CardPrice]]:
+    def card_prices(self) -> list[CardPrice]:
         return self._card_prices
 
     @card_prices.setter
-    def card_prices(self, card_prices: list):
+    def card_prices(self, card_prices: list[str]):
         self._card_prices = [CardPrice(**c) for c in card_prices]
