@@ -15,7 +15,7 @@ from . import validators
 
 
 @dataclass
-class Card(object):
+class Card:
     """Model that represent a card instance"""
 
     id: Optional[int] = None
